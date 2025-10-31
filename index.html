@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delikao.cz – Delikatesy, dárkové boxy a potěšení pro smysly</title>
+  <meta name="description" content="Delikao.cz – prémiové delikatesy, dárkové boxy pro firmy i radost domů. Čokolády, káva, vína, ořechy a další delikátní výběr." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Roboto', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#faf7f2', 100:'#f5efe6', 200:'#eadcc6', 300:'#dfc9a7', 400:'#d5b789',
+              500:'#caa56b', 600:'#a98553', 700:'#866841', 800:'#5f4a2e', 900:'#3d2f1c'
+            },
+            olive: { 500: '#6b7d57' },
+            gold: { 500: '#b68a2f' }
+          },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,0.06)' }
+        }
+      }
+    }
+  </script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <style> html{scroll-behavior:smooth} </style>
+</head>
+<body class="font-sans text-slate-900 bg-brand-50">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3 group" aria-label="Delikao domů">
+          <div class="w-10 h-10 rounded-2xl bg-brand-700 grid place-items-center text-white font-extrabold shadow-soft group-hover:scale-105 transition">D</div>
+          <div class="leading-tight">
+            <div class="font-black tracking-tight text-xl">Delikao.cz</div>
+            <div class="text-xs text-slate-500 -mt-0.5">delikátní výběr pro náročné</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="#produkty" class="hover:text-brand-700">Produkty</a>
+          <a href="#boxy" class="hover:text-brand-700">Dárkové boxy</a>
+          <a href="#o-nas" class="hover:text-brand-700">O nás</a>
+          <a href="#kontakt" class="hover:text-brand-700">Kontakt</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <a href="#boxy" class="hidden sm:inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-brand-700 text-white hover:bg-brand-800 transition shadow-soft">
+            <i data-lucide="gift" class="w-4 h-4"></i>
+            <span>Firemní dárky</span>
+          </a>
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-300 hover:bg-slate-50">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+            <span class="sr-only">Otevřít menu</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white">
+      <div class="px-4 py-3 flex flex-col gap-3">
+        <a class="py-2" href="#produkty">Produkty</a>
+        <a class="py-2" href="#boxy">Dárkové boxy</a>
+        <a class="py-2" href="#o-nas">O nás</a>
+        <a class="py-2" href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-100 via-white to-olive-500/10 pointer-events-none"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight">
+            Delikátní dárky a <span class="text-brand-700">prémiové delikatesy</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-prose">
+            Vybíráme jen to nejlepší: bean‑to‑bar čokolády, výběrovou kávu, lahodné
+            oleje, ořechy a vína. Sestavte si vlastní box nebo vyberte hotovou sadu.
+          </p>
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <a href="#boxy" class="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-brand-700 text-white hover:bg-brand-800 transition shadow-soft">
+              <i data-lucide="box" class="w-5 h-5"></i>
+              <span>Prohlédnout dárkové boxy</span>
+            </a>
+            <a href="#produkty" class="inline-flex items-center gap-2 rounded-xl px-5 py-3 border border-slate-300 hover:bg-white transition">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+              <span>Prozkoumat nabídku</span>
+            </a>
+          </div>
+          <div class="mt-6 flex items-center gap-4 text-sm text-slate-500">
+            <div class="flex items-center gap-2"><i data-lucide="check-circle2" class="w-4 h-4"></i> Čerstvý výběr</div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle2" class="w-4 h-4"></i> Doručení do 48 h</div>
+            <div class="flex items-center gap-2"><i data-lucide="check-circle2" class="w-4 h-4"></i> Firemní branding</div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/3] w-full rounded-3xl bg-white shadow-soft border border-slate-200 p-6 grid place-items-center">
+            <!-- Dekorativní minimalistický box z SVG, aby fungoval offline bez obrázků -->
+            <svg viewBox="0 0 600 450" class="w-full h-full">
+              <defs>
+                <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#eadcc6" />
+                  <stop offset="100%" stop-color="#caa56b" />
+                </linearGradient>
+              </defs>
+              <rect x="40" y="60" width="520" height="330" rx="24" fill="url(#grad)" opacity="0.35" />
+              <rect x="70" y="90" width="460" height="270" rx="20" fill="#fff" stroke="#e5e7eb" />
+              <g opacity="0.9">
+                <rect x="110" y="130" width="160" height="110" rx="14" fill="#f5efe6" stroke="#eadcc6" />
+                <rect x="330" y="130" width="160" height="110" rx="14" fill="#f5efe6" stroke="#eadcc6" />
+                <rect x="110" y="260" width="160" height="70" rx="12" fill="#f5efe6" stroke="#eadcc6" />
+                <rect x="330" y="260" width="160" height="70" rx="12" fill="#f5efe6" stroke="#eadcc6" />
+              </g>
+              <text x="300" y="380" text-anchor="middle" font-family="Roboto, Arial" font-size="22" fill="#866841">Delikao – ukázkový náhled boxu</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kategorie / Produkty -->
+  <section id="produkty" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-black tracking-tight">Nejžádanější kategorie</h2>
+          <p class="mt-2 text-slate-600">Rychlý výběr pro vaši inspiraci. Vše skladem nebo na objednávku do 5 dnů.</p>
+        </div>
+        <a href="#" class="hidden sm:inline-flex items-center gap-2 text-brand-700 hover:underline">Zobrazit všechny <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Karta kategorie -->
+        <a href="#" class="group rounded-2xl bg-white border border-slate-200 shadow-soft p-5 hover:-translate-y-0.5 transition block">
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-brand-100 to-white grid place-items-center border border-brand-200">
+            <i data-lucide="coffee" class="w-12 h-12 text-brand-700"></i>
+          </div>
+          <div class="mt-4 font-semibold">Výběrová káva</div>
+          <div class="text-sm text-slate-500">Filtr / espresso / dárkové sety</div>
+        </a>
+        <a href="#" class="group rounded-2xl bg-white border border-slate-200 shadow-soft p-5 hover:-translate-y-0.5 transition block">
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-brand-100 to-white grid place-items-center border border-brand-200">
+            <i data-lucide="wine" class="w-12 h-12 text-brand-700"></i>
+          </div>
+          <div class="mt-4 font-semibold">Vína & prosecco</div>
+          <div class="text-sm text-slate-500">Pečlivý výběr od lokálních vinařů</div>
+        </a>
+        <a href="#" class="group rounded-2xl bg-white border border-slate-200 shadow-soft p-5 hover:-translate-y-0.5 transition block">
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-brand-100 to-white grid place-items-center border border-brand-200">
+            <i data-lucide="chocolate" class="w-12 h-12 text-brand-700"></i>
+          </div>
+          <div class="mt-4 font-semibold">Čokolády</div>
+          <div class="text-sm text-slate-500">Bean‑to‑bar, ořechy v čokoládě, pralinky</div>
+        </a>
+        <a href="#" class="group rounded-2xl bg-white border border-slate-200 shadow-soft p-5 hover:-translate-y-0.5 transition block">
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-brand-100 to-white grid place-items-center border border-brand-200">
+            <i data-lucide="nut" class="w-12 h-12 text-brand-700"></i>
+          </div>
+          <div class="mt-4 font-semibold">Ořechy & snacky</div>
+          <div class="text-sm text-slate-500">Mixy do kanceláře i na cesty</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dárkové boxy -->
+  <section id="boxy" class="py-16 bg-white border-y border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-black tracking-tight">Dárkové boxy</h2>
+          <p class="mt-2 text-slate-600">Hotové sady nebo si poskládejte vlastní. Branding na přání.</p>
+        </div>
+        <a href="#" class="hidden sm:inline-flex items-center gap-2 text-brand-700 hover:underline">Všechny boxy <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <!-- Box 1 -->
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-soft overflow-hidden flex flex-col">
+          <div class="aspect-[16/10] bg-gradient-to-br from-brand-100 to-white grid place-items-center border-b border-slate-200">
+            <i data-lucide="gift" class="w-14 h-14 text-brand-700"></i>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-bold text-lg">Delikao Classic</h3>
+            <p class="mt-1 text-sm text-slate-600">Káva 250 g, čokoláda 70 %, ořechový mix 200 g.</p>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <div class="font-bold">690 Kč</div>
+              <button class="inline-flex items-center gap-2 rounded-xl px-4 py-2 border border-slate-300 hover:bg-slate-50">
+                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                Přidat
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Box 2 -->
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-soft overflow-hidden flex flex-col">
+          <div class="aspect-[16/10] bg-gradient-to-br from-brand-100 to-white grid place-items-center border-b border-slate-200">
+            <i data-lucide="stars" class="w-14 h-14 text-brand-700"></i>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-bold text-lg">Delikao Premium</h3>
+            <p class="mt-1 text-sm text-slate-600">Prosecco, pralinky, pistácie, olivový olej 250 ml.</p>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <div class="font-bold">1 290 Kč</div>
+              <button class="inline-flex items-center gap-2 rounded-xl px-4 py-2 border border-slate-300 hover:bg-slate-50">
+                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                Přidat
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Box 3 -->
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-soft overflow-hidden flex flex-col">
+          <div class="aspect-[16/10] bg-gradient-to-br from-brand-100 to-white grid place-items-center border-b border-slate-200">
+            <i data-lucide="sparkles" class="w-14 h-14 text-brand-700"></i>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <h3 class="font-bold text-lg">Delikao Office</h3>
+            <p class="mt-1 text-sm text-slate-600">Kancelářský snack box pro tým (5–8 osob).</p>
+            <div class="mt-auto pt-4 flex items-center justify-between">
+              <div class="font-bold">2 490 Kč</div>
+              <button class="inline-flex items-center gap-2 rounded-xl px-4 py-2 border border-slate-300 hover:bg-slate-50">
+                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                Přidat
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA řádek -->
+      <div class="mt-8 rounded-2xl bg-gradient-to-r from-brand-700 to-olive-500 text-white p-6 lg:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="max-w-2xl">
+          <div class="font-bold text-xl">Chcete firemní branding na boxu?</div>
+          <div class="text-white/90">Přidáme logo na víko, kartičku s věnováním i personalizaci obsahu.</div>
+        </div>
+        <a href="#kontakt" class="inline-flex items-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 px-5 py-3">
+          <i data-lucide="message-square" class="w-5 h-5"></i>
+          <span>Napište nám</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- O nás -->
+  <section id="o-nas" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl font-black tracking-tight">Proč Delikao?</h2>
+          <ul class="mt-4 space-y-3 text-slate-700">
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-700 mt-0.5"></i> Kurátorujeme sortiment – vše je ochutnané a prověřené.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-700 mt-0.5"></i> Preferujeme lokální výrobce a poctivé suroviny.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-700 mt-0.5"></i> Dárkové balení je součástí ceny – stačí předat.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-700 mt-0.5"></i> Firemní dárky řešíme <span class="font-semibold">na klíč</span> včetně loga a kartičky.</li>
+          </ul>
+          <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+            <div class="font-semibold">Slogan</div>
+            <div class="text-slate-700">„Delikao – potěšení pro smysly“</div>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-6 shadow-soft">
+          <h3 class="font-bold text-lg">Rychlá poptávka pro firmy</h3>
+          <form class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit="event.preventDefault(); alert('Děkujeme! Ozveme se do 1 pracovního dne.');">
+            <div class="sm:col-span-1">
+              <label class="text-sm text-slate-600">Jméno</label>
+              <input required type="text" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="Jana Nováková" />
+            </div>
+            <div class="sm:col-span-1">
+              <label class="text-sm text-slate-600">E‑mail</label>
+              <input required type="email" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="jana@firma.cz" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm text-slate-600">Zpráva</label>
+              <textarea rows="4" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2" placeholder="Počet kusů, rozpočet, přání…"></textarea>
+            </div>
+            <div class="sm:col-span-2 flex items-center justify-between gap-3">
+              <label class="inline-flex items-center gap-2 text-sm text-slate-600">
+                <input type="checkbox" required class="rounded border-slate-300" />
+                Souhlasím se zpracováním osobních údajů.
+              </label>
+              <button class="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-brand-700 text-white hover:bg-brand-800 transition">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Odeslat poptávku
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 lg:p-8 shadow-soft grid md:grid-cols-3 gap-6 items-center">
+        <div class="md:col-span-2">
+          <h3 class="text-xl font-bold">Získejte 100 Kč slevu na první objednávku</h3>
+          <p class="text-slate-600">Přihlaste se k odběru novinek a exkluzivních nabídek.</p>
+        </div>
+        <form class="flex gap-2" onsubmit="event.preventDefault(); alert('Děkujeme za přihlášení!');">
+          <input type="email" required class="flex-1 rounded-xl border border-slate-300 px-3 py-2" placeholder="vas@email.cz" />
+          <button class="rounded-xl px-4 py-2 bg-brand-700 text-white hover:bg-brand-800">Odebírat</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="py-16 bg-white border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="md:col-span-2">
+          <h2 class="text-3xl font-black tracking-tight">Kontakt</h2>
+          <p class="mt-2 text-slate-600">Ozveme se nejpozději následující pracovní den.</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-6">
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+              <div class="font-semibold flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brand-700"></i> E‑mail</div>
+              <a href="mailto:hello@delikao.cz" class="text-brand-700 hover:underline">hello@delikao.cz</a>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+              <div class="font-semibold flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-brand-700"></i> Telefon</div>
+              <a href="tel:+420000000000" class="text-brand-700 hover:underline">+420 000 000 000</a>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-soft">
+          <h3 class="font-bold">Fakturační údaje</h3>
+          <ul class="mt-3 text-slate-700 text-sm space-y-1">
+            <li>Delikao s.r.o.</li>
+            <li>IČ: 00000000</li>
+            <li>Ulice 123, 110 00 Praha</li>
+          </ul>
+          <div class="mt-4 text-xs text-slate-500">*Zatím demo údaje – upravíme dle reality.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+        <div>
+          <div class="font-bold">Delikao.cz</div>
+          <p class="mt-2 text-slate-600">Prémiové delikatesy a dárkové boxy. S láskou ke kvalitě.</p>
+        </div>
+        <div>
+          <div class="font-bold">Rychlé odkazy</div>
+          <ul class="mt-2 space-y-1 text-slate-600">
+            <li><a href="#produkty" class="hover:underline">Produkty</a></li>
+            <li><a href="#boxy" class="hover:underline">Dárkové boxy</a></li>
+            <li><a href="#o-nas" class="hover:underline">O nás</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold">Podpora</div>
+          <ul class="mt-2 space-y-1 text-slate-600">
+            <li><a href="#" class="hover:underline">Obchodní podmínky</a></li>
+            <li><a href="#" class="hover:underline">Doprava a platba</a></li>
+            <li><a href="#" class="hover:underline">Reklamace</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold">Sledujte nás</div>
+          <div class="mt-2 flex items-center gap-3 text-slate-600">
+            <a href="#" aria-label="Instagram" class="hover:text-brand-700"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="Facebook" class="hover:text-brand-700"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+            <a href="#" aria-label="Tiktok" class="hover:text-brand-700"><i data-lucide="tiktok" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-500">
+        © <span id="year"></span> Delikao.cz — Všechna práva vyhrazena.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Ikony
+    window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+    // Rok v patičce
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu toggle + auto‑close on link click
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleMenu = () => mobileMenu.classList.toggle('hidden');
+    menuBtn?.addEventListener('click', toggleMenu);
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+    }));
+  </script>
+</body>
+</html>
